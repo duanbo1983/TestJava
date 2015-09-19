@@ -24,7 +24,7 @@ public class HideStatic {
         }
 
         static void s2Method(String str) {
-
+            System.out.println("s2 Method Base");
         }
 
         void printOut() {
