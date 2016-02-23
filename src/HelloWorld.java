@@ -17,6 +17,10 @@ public class HelloWorld {
     static Pattern sessionIdPattern = Pattern.compile("(&sessionid=([^&]+)$)|(&sessionid=([^&]+)&.+$)");
 
     public static void main(String[] strings) {
+        NetworkType networkType = NetworkType.valueOf("STRING_ONE");
+        System.out.println(networkType);
+
+
         System.out.println("HelloWorld");
         String address = "http://upload.wikimedia.org/wikipedia/en/5/59/Kirix-strata-logo-256.png";
         try {

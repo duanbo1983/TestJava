@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,5 +34,26 @@ public class HelloAtomic {
 
         stringAtomicReference.set(null);
         System.out.println(stringAtomicReference.get());
+        stringAtomicReference = null;
+
+        List<Integer> fullList = new ArrayList<>();
+        fullList.add(0);
+        fullList.add(1);
+        fullList.add(2);
+        fullList.add(3);
+        fullList.add(4);
+        fullList.add(5);
+
+        Integer[] messages;
+        int max = 6;
+        List<Integer> subList = fullList;
+        int size = fullList.size();
+        if (size > max) {
+            subList = fullList.subList(0, max);
+        }
+        messages = subList.toArray(new Integer[subList.size()]);
+        subList.clear();
+        System.out.println(Arrays.toString(messages));
+        System.out.println(fullList.size());
     }
 }

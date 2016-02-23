@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gradle
+local.properties
+.idea
+*.iml
+build
+.DS_Store
+.crashlytics_data
+checkstyle*.xml
+com_crashlytics_export_strings.xml
+crashlytics-build.properties
+.swp
+RELEASE_BRANCH
+out
