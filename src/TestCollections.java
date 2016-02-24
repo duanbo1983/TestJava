@@ -17,16 +17,16 @@ public class TestCollections {
         mLocationListeners.add("ddd");
         mLocationListeners.add("fff");
 
-        final Object o = new Object();
+        final Object mutex = new Object();
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 System.out.println("DB-Test thread entered");
 
-                synchronized (o) {
+                synchronized (mutex) {
                     try {
-                        o.wait(1000);
+                        mutex.wait(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -47,7 +47,24 @@ public class TestCollections {
                         e.printStackTrace();
                     }
                 }
+                //mLocationListeners.remove("aaa");
                 System.out.println("DB-Test --> end: " + listener);
+            }
+        }
+
+        System.out.println(mLocationListeners);
+
+
+        Object oo = new Object();
+        synchronized (oo) {
+            System.out.println("first level");
+
+            synchronized (oo) {
+                System.out.println("second level");
+
+                synchronized (oo) {
+                    System.out.println("third level");
+                }
             }
         }
     }
