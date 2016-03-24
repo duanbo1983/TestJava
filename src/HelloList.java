@@ -18,6 +18,10 @@ public class HelloList {
         System.out.println(map.get(2));
         System.out.println(map.get(3));
         System.out.println(map.get(4));
+
+        System.out.println(String.format("Error adding ground overlay", "GroundOverlayOptions was: Position: 37.775812, -122.418047 [0], Image: present, Width: 4, Height: 4, Map zoom level: 18.0, Map target: 37.775702077835085, -122.4182530492544 [0]"));
+
+
     }
 
     private static class LimitedHashMap<K, V> extends LinkedHashMap<K, V> {
