@@ -1,3 +1,5 @@
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +23,15 @@ public class HelloList {
 
         System.out.println(String.format("Error adding ground overlay", "GroundOverlayOptions was: Position: 37.775812, -122.418047 [0], Image: present, Width: 4, Height: 4, Map zoom level: 18.0, Map target: 37.775702077835085, -122.4182530492544 [0]"));
 
+
+        URL url = null;
+        try {
+            url = new URL("/abc");
+            System.out.println(url);
+        }
+        catch (MalformedURLException e) {
+            System.out.println(e);
+        }
 
     }
 
