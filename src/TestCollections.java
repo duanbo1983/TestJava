@@ -9,7 +9,7 @@ public class TestCollections {
 
     public static void main(String[] strings) {
         final Set<String> mLocationListeners =
-                Collections.synchronizedSet(new HashSet<>());
+                Collections.synchronizedSet(new HashSet<String>());
 
         mLocationListeners.add("aaa");
         mLocationListeners.add("bbb");
