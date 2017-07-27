@@ -5,6 +5,10 @@ public class HideStatic {
 
     public static void main(String[] strings) {
 
+        String a = "/";
+
+        System.out.println("start" + a.substring(1) + ".");
+
         Sub sub = new Sub();
 
         Base base = sub;
@@ -19,6 +23,11 @@ public class HideStatic {
     }
 
     static class Base {
+
+        static {
+            System.out.println("static block in base");
+        }
+
         static void sMethod() {
             System.out.println("sMethod Base");
         }
@@ -33,6 +42,11 @@ public class HideStatic {
     }
 
     static class Sub extends Base {
+
+        static {
+            System.out.println("static block in Sub");
+        }
+
         static void sMethod() {
             System.out.println("sMethod Sub");
         }
@@ -40,15 +54,5 @@ public class HideStatic {
         void printOut() {
             System.out.println("printOut Sub");
         }
-
-//        void s2Method(String str) {
-//
-//        }
-    }
-
-    class A {
-//        static String A = "abc";
-
-        //static void test();
     }
 }

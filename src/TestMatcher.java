@@ -1,4 +1,3 @@
-import java.net.URI;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,6 +12,8 @@ public class TestMatcher {
             Pattern.compile("^/rt/riders/" + UUID_PATTERN_STR + "/status.*|^/rt/riders/me/status.*");
 
 
+    private static final Pattern TOKEN_PATTERN =
+            Pattern.compile("(^/rt/notifier/device-tokens/).+");
 
     private static final Pattern mSessionIdPattern =
             Pattern.compile("[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}");
@@ -40,5 +41,9 @@ public class TestMatcher {
 
         final Matcher matcher4 = STATUS_PATTERN.matcher("/rt/riders/d-3f02-4337-bab9-5a0640aaf66c/status");
         System.out.println(matcher4.matches());
+
+        final Matcher matcher5 = TOKEN_PATTERN.matcher("/rt/notifier/device-tokens/fXA__MW2BqY:APA91bFVGqOLmTl2lrrODRn8tdKM3xwvtC8zKvEvZpj296XToKvmPJHEOYCChlTrVKSzTRp0HlE0LhwwJSEEFarHhSPvg6vsWvEwR6LKBm4FBhNoz7D0Rh2i07k4gqZVcJdJghFRLdWU");
+        System.out.println(matcher5.toString());
+        System.out.println(matcher5.replaceFirst("$1token"));
     }
 }
