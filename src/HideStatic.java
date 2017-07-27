@@ -32,10 +32,6 @@ public class HideStatic {
             System.out.println("sMethod Base");
         }
 
-        static void s2Method(String str) {
-            System.out.println("s2 Method Base");
-        }
-
         void printOut() {
             System.out.println("printOut Base");
         }
