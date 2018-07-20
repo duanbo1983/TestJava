@@ -27,4 +27,5 @@ public class DataSource {
 //    public rx.Observable<String> getUuidObservable() {
 //        return mUuidSubject.asObservable();
 //    }
+
 }
