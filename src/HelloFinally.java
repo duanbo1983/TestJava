@@ -6,24 +6,16 @@ import java.util.List;
  */
 public class HelloFinally {
     public static void main(String[] strings) {
-        List<String> list = new ArrayList<>(8);
-        list.add("dd");
-        list.add("dd");
-
-        System.out.println(list.size());
-
-        System.out.println(getL(null));
+        System.out.println("new Index:" + newIndex(8));
+        System.out.println("new Index:" + newIndex(9));
+        System.out.println("new Index:" + newIndex(10));
+        System.out.println("new Index:" + newIndex(11));
+        System.out.println("new Index:" + newIndex(12));
     }
 
-    public static int getL(String s) {
-        try {
-            return s.length();
-        } catch (Exception e) {
-            System.out.println(e);
-            System.out.println("---");
-            return 0;
-        } finally {
-            System.out.println("Finish --");
-        }
+    public static int newIndex(int index) {
+        index -= index & (-index);
+        return index;
     }
+
 }
